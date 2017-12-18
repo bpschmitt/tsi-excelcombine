@@ -30,6 +30,15 @@ df1.columns = df1.columns.str.lower().str.replace('.','_')
 # Replace blank cells with a value (e.g. None)
 df1 = df1.fillna(blankValue)
 
+# Uncomment and configure these lines to automatically add the TSI required fields
+#df1['title'] = df1['someDescription']
+#df1['createdat'] = df1['someDate']
+#df1['eventclass'] = df1['eventClassField']
+#df1['source'] = 'Source,Source,Source'
+#df1['sender'] = 'Sender,Sender,Sender'
+#df1['app_id'] = 'MyAppId'
+#df1['fingerprintfields'] = 'number'
+
 # Write the new file
 print('Writing new file...')
 df1.to_excel(directory + '/' + output_filename, index=False)
